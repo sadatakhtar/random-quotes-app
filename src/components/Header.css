@@ -1,0 +1,19 @@
+.header{
+    background-color: skyblue;
+    height: 120px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 30px;
+
+}
+.header_title {
+    margin-right: 700px;
+}
+
+.header_logo > img {
+    background-color: slategray;
+    height: 80px;
+}

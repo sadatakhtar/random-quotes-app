@@ -1,0 +1,35 @@
+.quotes{
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.btn{
+    width: 150px;
+    height: 40px;
+    font-size: 22px;
+    border-radius: 10px;
+    background-color: steelblue;
+    outline: none;
+}
+.btn:hover{
+    cursor: pointer;
+    color: white;
+
+}
+.quotes > h2 {
+    font-size: 40px;
+    font-weight: 300;
+}
+.quotes > p {
+    font-size: 25px;
+    font-weight: 100;
+}
+.quotes > h2 {
+    
+    width: 60%;
+    text-align: center;
+   
+}

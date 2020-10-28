@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import React, { useState, useEffect} from 'react';
 import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Quotes from './components/Quotes';
+
+
+
 
 function App() {
-  return (
+  const [fetchQuote, setFetchQuote] = useState("");
+  const [loader, setLoader] = useState(false);
+
+ useEffect(() => {
+   //https://random-quotes-heroku.herokuapp.com/quotes/random
+   //https://quotes-cyf.glitch.me/quotes/random
+   fetch('https://random-quotes-heroku.herokuapp.com/quotes/random')  
+   .then(res => {
+     return res.json();
+   })
+   .then(data => {
+     setLoader(true);
+     console.log(data);
+     setFetchQuote(data);
+     setLoader(false);
+   })
+   .catch(err => {
+     console.log(err);
+   })
+ }, []);
+
+  return loader ? <h3>Loading...</h3> : (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Quotes fetchQuote={fetchQuote} setFetchQuote={setFetchQuote}/>
+      <Footer />
     </div>
   );
 }
