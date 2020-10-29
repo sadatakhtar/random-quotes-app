@@ -9,8 +9,8 @@ function Quotes({fetchQuote, setFetchQuote}) {
     
     return (
         <div className="quotes">
-            <h2>{`${fetchQuote.quote}`}</h2>
-             <p>{`${fetchQuote.author}`} </p>
+            <h2><span>"</span>{`${fetchQuote.quote}`}<span>"</span></h2>
+             <p className="quotes_author">{`${fetchQuote.author}`} </p>
             <button className="btn" onClick={handleClick}>Click</button>
         </div>
     )
