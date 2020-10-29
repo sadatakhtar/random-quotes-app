@@ -29,7 +29,7 @@ function App() {
    })
  }, []);
 
-  return loader ? <h3>Loading...</h3> : (
+  return loader ?   <h3>Loading...</h3> : (
     <div className="App">
       <Header />
       <Quotes fetchQuote={fetchQuote} setFetchQuote={setFetchQuote}/>
