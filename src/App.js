@@ -7,29 +7,30 @@ import Quotes from './components/Quotes';
 
 
 
+
 function App() {
   const [fetchQuote, setFetchQuote] = useState("");
-  const [loader, setLoader] = useState(false);
+  //const [loader, setLoader] = useState(false);
 
  useEffect(() => {
    //https://random-quotes-heroku.herokuapp.com/quotes/random
    //https://quotes-cyf.glitch.me/quotes/random
-   fetch('https://random-quotes-heroku.herokuapp.com/quotes/random')  
+   fetch('https://quotes-cyf.glitch.me/quotes/random')  
    .then(res => {
      return res.json();
    })
    .then(data => {
-     setLoader(true);
+    // setLoader(true);
      console.log(data);
      setFetchQuote(data);
-     setLoader(false);
+    // setLoader(false);
    })
    .catch(err => {
      console.log(err);
    })
  }, []);
 
-  return loader ?   <h3>Loading...</h3> : (
+  return  (
     <div className="App">
       <Header />
       <Quotes fetchQuote={fetchQuote} setFetchQuote={setFetchQuote}/>
